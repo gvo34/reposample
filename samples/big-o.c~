@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+const int mylimit=11;
+
+int main(int argc, char** argv){
+
+  if(argc==1){
+    printf("Need a number, repeat\n");
+  }
+  else {
+    int k=1;
+    int array[mylimit];
+
+    while (argv[k]!=NULL && k<=mylimit) {
+       array[k-1] = atoi(argv[k]);
+       k++;
+    }
+
+    if (k>mylimit) {
+      printf("overflowed array at my limit (10) with %d\n", k-1);
+	}
+    else {
+      printf(" original array is <");
+      for (int j=0;j<k-1;j++) printf("%d ",array[j]);
+      printf(">\n");
+      
+    }
+  }
+
+  return 0;
+}
+
